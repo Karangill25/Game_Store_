@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #262b3f;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            max-width: 100rem;
+            background: linear-gradient(90deg, #663da6, #262b3f);
+            color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+            height: 50rem;
+        }
+
+        .left {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left img {
+            width: 50px;
+            margin-top: -15rem;
+            margin-bottom: 30rem;
+            position: fixed;
+        }
+
+        .left h1 {
+            font-size: 2rem;
+            color: #7be9fc;
+            /* margin-bottom: 10px; */
+        }
+
+        .left p {
+            font-size: 0.95em;
+            line-height: 1.5;
+            color: #d2eef7;
+            margin-bottom: 20px;
+        }
+        .left p #more{
+            display: none;
+        }
+
+        .left button {
+            background-color: #0f8ad0;
+            color: white;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 50%;
+        }
+
+        .left button:hover {
+            background-color: #0a6fa9;
+        }
+
+        .social {
+            display: flex;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .social i {
+            font-size: 20px;
+            background-color: #0a2c4d;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .social i:hover {
+            transform: scale(1.1);
+        }
+
+        .right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .right img.dragon {
+            width: 100%;
+            max-width: 400px;
+            transform: scale(1.1);
+             animation: updown 4s ease infinite alternate;
+        }
+        @keyframes updown {
+            0%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(50px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+          .left img{
+            display: none;
+          }
+            .left,
+            .right {
+                margin-top: 50%;
+                align-items: center;
+                padding: 20px;
+            }
+            .right img{
+                display: none;
+            }
+
+            .social {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left">
+            <img src="img/fav.png" alt="" class="logo">
+            <h1>Game</h1>
+            <p>
+                Games are sometimes played purely for enjoyment, sometimes for achievement or reward as well.They can
+                be played alone, in teams, or online; by amateurs or by professionals. <span id="dots">....</span> <span id="more"> The players may have an audience
+                of non-players, such as when people are entertained by watching a chess championship. On the other hand,
+                players in a game may constitute their own audience as they take their turn to play. Often, part of the
+                entertainment for children playing a game is deciding who is part of their audience and who participates
+                as a player. A toy and a game are not the same. Toys generally allow for unrestricted play, whereas
+                games present rules for the player to follow. Similarly, a puzzle is not exactly a game.</span>
+            </p>
+            <button id="myBtn" onclick="myFunction()">Read More</button>
+            <div class="social">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+        <div class="right">
+            <img src="img/assassins-creed-png-27521.png" alt="" class="dragon">
+        </div>
+    </div>
+    <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}
+    </script>
+</body>
+
+</html>
